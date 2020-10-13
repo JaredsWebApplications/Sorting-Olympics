@@ -2,20 +2,20 @@
 
  *************************************************************************/
 
-const ORIGINAL_STRING = "5F7D8A1593B47B8";				//Initial string
+const ORIGINAL_STRING = "5F7D8A1593B47B8";								//Initial string
 
-var passString = {	ORIGINAL_STRING,
+var passString = {	ORIGINAL_STRING,									//An array of strings, each one will be passed into a different algorithm
 					ORIGINAL_STRING,
 					ORIGINAL_STRING,
-					ORIGINAL_STRING};					//An array of strings, each one will be passed into a different algorithm
-var inputString, expectedString = "";					//The original string and the expected string
-const NUM_ALGOS = passString.size;						//Number of algorithms we're sorting with
+					ORIGINAL_STRING};					
+var inputString, expectedString = "";									//The original string and the expected string
+const NUM_ALGOS = passString.size;										//Number of algorithms we're sorting with
 
 //Function called before draw
 function setup() {
 	//The original string is our inputString
 	inputString = ORIGINAL_STRING;
-	//expectedString = Algorithm.Sort();				//Sorts the string completely							NOT IMPLEMENTED
+	//expectedString = Algorithm.Sort(inputString);						//Sorts the string completely							NOT IMPLEMENTED
 }
 
 var done = false;
@@ -24,7 +24,7 @@ var done = false;
 function draw() {
 	if(!done)
 	{
-		done = true;									//we're done unless an algorithm updates
+		done = true;													//we're done unless an algorithm updates
 		
 		//Go through all algorithms
 		for(let i = 0; i < NUM_ALGOS; i++)
@@ -32,9 +32,9 @@ function draw() {
 			//If the current algorithm isn't done sorting
 			if(passString[i] != expectedString)
 			{
-				//passString[i] = Algorithm.Pass(i);	//Perform a pass on the algorithm						NOT IMPLEMENTED
-				//Algorithm.UpdateDraw(i);				//Draw the update to the screen							NOT IMPLEMENTED
-				done = false;							//An algorithm updated, we're not done yet
+				//passString[i] = Algorithm.Pass(passString[i], i);		//Perform a pass on the algorithm						NOT IMPLEMENTED
+				//Algorithm.UpdateDraw(passString[i], i);				//Draw the update to the screen							NOT IMPLEMENTED
+				done = false;											//An algorithm updated, we're not done yet
 			}
 		}
 	}
@@ -49,14 +49,14 @@ function draw() {
 			//For every string
 			for(let i = 0; i < NUM_ALGOS; i++)
 			{
-				passString[i] = inputString;			//Set the current string to the new input string
+				passString[i] = inputString;							//Set the current string to the new input string
 			}
-			done = false;								//We are no longer done
+			done = false;												//We are no longer done
 		}
 		//else If we've looped, don't update done. We'll stop performing operations.
 		else
 		{
-			noLoop();									//Stops draw from being called again
+			noLoop();													//Stops draw from being called again
 		}
 	}
 }
