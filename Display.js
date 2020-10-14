@@ -8,6 +8,7 @@ var passString = {	ORIGINAL_STRING,									//An array of strings, each one will
 					ORIGINAL_STRING,
 					ORIGINAL_STRING,
 					ORIGINAL_STRING};					
+Algo = new Algorithm();
 var inputString, expectedString = "";									//The original string and the expected string
 const NUM_ALGOS = passString.size;										//Number of algorithms we're sorting with
 
@@ -15,7 +16,7 @@ const NUM_ALGOS = passString.size;										//Number of algorithms we're sorting
 function setup() {
 	//The original string is our inputString
 	inputString = ORIGINAL_STRING;
-	//expectedString = Algorithm.Sort(inputString);						//Sorts the string completely							NOT IMPLEMENTED
+	//expectedString = Algo.Sort(inputString);						//Sorts the string completely							NOT IMPLEMENTED
 }
 
 var done = false;
@@ -32,8 +33,8 @@ function draw() {
 			//If the current algorithm isn't done sorting
 			if(passString[i] != expectedString)
 			{
-				//passString[i] = Algorithm.Pass(passString[i], i);		//Perform a pass on the algorithm						NOT IMPLEMENTED
-				//Algorithm.UpdateDraw(passString[i], i);				//Draw the update to the screen							NOT IMPLEMENTED
+				//passString[i] = Algo.Pass(passString[i], i);		//Perform a pass on the algorithm						NOT IMPLEMENTED
+				//Algo.UpdateDraw(passString[i], i);				//Draw the update to the screen							NOT IMPLEMENTED
 				done = false;											//An algorithm updated, we're not done yet
 			}
 		}
