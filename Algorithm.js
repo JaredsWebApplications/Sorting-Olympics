@@ -55,7 +55,14 @@ class Algorithm {
 		}
 	}
 	
-	Sort() {
-		//Fully sorts a string using any of the algorithms we have, just so we know what we're expecting as a result when we actually care to display
+	Sort(oldString) {
+		//Fully sorts a string using the first algorithm we have, just so we know what we're expecting as a result when we actually care to display
+		passString = Pass(oldString, 0);
+		while(passString != oldString)
+		{
+			oldString = passString;
+			passString = Pass(oldString, 0);
+		}
+		return passString;
 	}
 }
