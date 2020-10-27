@@ -1,22 +1,23 @@
-/************************************************************************
-
- *************************************************************************/
-
 const ORIGINAL_STRING = "5F7D8A1593B47B8";								//Initial string
 
-var passString = {	ORIGINAL_STRING,									//An array of strings, each one will be passed into a different algorithm
-					ORIGINAL_STRING,
-					ORIGINAL_STRING,
-					ORIGINAL_STRING};					
-Algo = new Algorithm();
-var inputString, expectedString = "";									//The original string and the expected string
-const NUM_ALGOS = passString.size;										//Number of algorithms we're sorting with
+var passString = new Array(  	ORIGINAL_STRING,									//An array of strings, each one will be passed into a different algorithm
+								ORIGINAL_STRING,
+								ORIGINAL_STRING,
+								ORIGINAL_STRING);					
+
+var inputString = "";
+var expectedString = "";									//The original string and the expected string
+const NUM_ALGOS = passString.length;										//Number of algorithms we're sorting with
 
 //Function called before draw
 function setup() {
+	Algo = new selectAlgorithm();
+	Display = new displayInterface();
+	Display.setup();
 	//The original string is our inputString
 	inputString = ORIGINAL_STRING;
-	expectedString = Algo.Sort(inputString);						//Sorts the string completely							NOT IMPLEMENTED
+	expectedString = ORIGINAL_STRING.split('').sort().join('');
+	frameRate(1);
 }
 
 var done = false;
@@ -33,12 +34,10 @@ function draw() {
 			//If the current algorithm isn't done sorting
 			if(passString[i] != expectedString)
 			{
-				passString[i] = Algo.Pass(passString[i], i);		//Perform a pass on the algorithm						NOT IMPLEMENTED
+				passString[i] = Algo.Pass(passString[i], i);		//Perform a pass on the algorithm
 				done = false;										//An algorithm updated, we're not done yet
 			}
 		}
-		
-
 	}
 	else
 	{
@@ -61,9 +60,5 @@ function draw() {
 			noLoop();													//Stops draw from being called again
 		}
 	}
-	
-	for(let i = 0; i < NUM_ALGOS; i++)
-	{
-		Algo.UpdateDraw(passString[i], i);				//Draw the update to the screen							NOT IMPLEMENTED
-	}
+	Display.draw(passString[0], passString[1], passString[2], passString[3]);
 }

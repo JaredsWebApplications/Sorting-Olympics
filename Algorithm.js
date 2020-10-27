@@ -9,50 +9,30 @@ const SORT = {
 	QUICK		: 3
 }
 
-class Algorithm {
+class selectAlgorithm {
 	constructor() {
 		this.InsertionSort 	= 0;
 		this.PoreSort		= 0;
 		this.MergeSort		= 0;
-		this.QuickSort		= 0;	
+		this.QuickSort		= 0;
 	}
 	Pass(stringSorting, sortType) {
+		let container = stringSorting.split(''); // can't mutate strings, create list
+
 		//Call the sorting algorithm we want in the following switch statement
 		switch(sortType)
 		{
 			case SORT.INSERTION:
-				
 				break;
-			case SORT.PORT:
-				
+			case SORT.PORE:
 				break;
 			case SORT.MERGE:
-				
 				break;
 			case SORT.QUICK:
-				
 				break;
 		}
+		//return stringSorting;
 		return stringSorting;
-	}
-	
-	UpdateDraw(stringDisplaying, index) {
-		//We're going to need to output in a different location based on the index
-		switch(index)
-		{
-			case SORT.INSERTION:
-				
-				break;
-			case SORT.PORT:
-				
-				break;
-			case SORT.MERGE:
-				
-				break;
-			case SORT.QUICK:
-				
-				break;
-		}
 	}
 	
 	Sort(oldString) {

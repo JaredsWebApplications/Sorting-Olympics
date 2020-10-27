@@ -1,38 +1,52 @@
-function conversion(string){
-    for(var i = 0; i < string.length; ++i){
-        let x = string[i].charCodeAt(0);
-        if(x >= 65 && x <= 70){
-            console.log((65 - x) + 10);
-        } else {
-            console.log(string[i]);
+let input = "KFTVAHMLVBFG";
+
+function bubblesort(string){
+    /*
+      * bubble sort implementation
+      * not needed but i think this is the basis of Gold's Pore Sort
+    */
+
+    let container = string.split(''); // can't mutate strings, create list
+
+    for(let i = 0; i < container.length; ++i) {
+        for(let j = 0; j < container.length; ++j) {
+            // if the first element is greater, than switch
+            if(container[j] > container[j+1]){
+                let temp = container[j];
+                container[j] = container[j+1];
+                container[j+1] = temp;
+            }
         }
+        break; // break after one pass
     }
+    return container.join('');
 }
 
-function compare(a, b){
-    return (a < b) ? -1 : (a > b) ? +1 : 0;
-}
 
-let poresortinput = "KFTVAHMLVBFG";
-let porecontainer = poresortinput.split('');
+/*
+ * this is a broken algo
+ * but BubbleSort does work for breaking out for one iteration
+*/
 
-function poreSort(string){
+function psort(string){
     let container = string.split('');
-    for(var i = 0; i < container.length; ++i){
-        if(i+2 < container.length){
-            console.log(i, string[i], i+2, string[i+2], "--->", i+2, string[i+2], i, string[i]);
-           let temp = container[i+2];
-           if(temp < string[i]){
-                container[i+2] = container[i];
-                container[i] = temp;
-           }
+
+    for(let i = 0; i < container.length; ++i) {
+        for(let j = 0; j < container.length; ++j){
+            if(container[j] > container[j+2] && j+2 < container.length){
+                let temp = container[j];
+                container[j] = container[j+2];
+                container[j+2] = temp;
+            }
         }
+        break;
     }
-    return container.join('')
+    return container.join('');
 }
 
 
-
-let string = poreSort(poresortinput)
-console.log(string)
-//console.log(porecontainer.sort().join(''))
+let s = input.split('').sort();
+while(input != s.join('')){
+    input = bubblesort(input)
+    console.log(input);
+}
