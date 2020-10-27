@@ -41,8 +41,11 @@ function draw() {
 	}
 	else
 	{
-		//Update update our new input string by shifting
-		inputString = inputString.substring(1, inputString.length + inputString.substring(0,0));
+		//Update our new input string by shifting
+		inputString = inputString.substring(1, inputString.length) + inputString.substring(0,1);
+		
+		//Reset our algorithms
+		Algo = new selectAlgorithm();
 		
 		//If we haven't looped yet
 		if(inputString != ORIGINAL_STRING)

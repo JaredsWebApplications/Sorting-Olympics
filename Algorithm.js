@@ -59,8 +59,10 @@ class selectAlgorithm {
 				this.PoreSort = !this.PoreSort;
 				break;
 			case SORT.MERGE:
+				return stringSorting.split('').sort().join('');
 				break;
 			case SORT.QUICK:
+				return stringSorting.split('').sort().join('');
 				break;
 		}
 		//return stringSorting;
