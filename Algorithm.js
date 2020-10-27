@@ -11,7 +11,7 @@ const SORT = {
 
 class selectAlgorithm {
 	constructor() {
-		this.InsertionSort 	= 0;
+		this.InsertionIndex = 1;
 		this.PoreSort		= 0;
 		this.MergeSort		= 0;
 		this.QuickSort		= 0;
@@ -23,6 +23,18 @@ class selectAlgorithm {
 		switch(sortType)
 		{
 			case SORT.INSERTION:
+				if(this.InsertionIndex < stringSorting.length)
+				{
+					let x = container[this.InsertionIndex];
+					let j = this.InsertionIndex - 1;
+					while(j >= 0 && container[j] > x)
+					{
+						container[j + 1] = container[j];
+						j = j - 1;
+					}
+					container[j + 1] = x;
+					this.InsertionIndex += 1;
+				}
 				break;
 			case SORT.PORE:
 				break;
@@ -32,7 +44,7 @@ class selectAlgorithm {
 				break;
 		}
 		//return stringSorting;
-		return stringSorting;
+		return container.join('');
 	}
 	
 	Sort(oldString) {
