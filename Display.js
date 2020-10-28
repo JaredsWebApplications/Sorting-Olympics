@@ -19,7 +19,7 @@ function setup() {
 	inputString = ORIGINAL_STRING;
 	expectedString = ORIGINAL_STRING.split('').sort().join('');
 
-	frameRate(1);
+	frameRate(2);
 }
 
 var done = false;
