@@ -20,24 +20,32 @@ class Cell {
         this.width = width;
 	}
 
-    drawToScreen(position, x, y, colorMe=false){
+    drawToScreen(position, x, y, colorMe=true){
       /*
        * Draw the current square to the screen
       */ 
+	  
+		let colorWanted = (this.content.charCodeAt(0) - "0".charCodeAt(0));
+		if(colorWanted > 9)
+			colorWanted -= 7;
+		
+		colorWanted *= 18;
 
-      if(colorMe){
-        // modify the color as needed
-        fill(colorMe);
-      }
+	  fill(colorWanted, 0xff, 0x77, 255);
       stroke('black');
-      strokeWeight(2);
+      strokeWeight(1);
       
       let [x1,y1,height,width] = this.dimensions();
       rect(x1, y1, height, width);
 
       textSize(22);
+	  
+	  
+        // modify the color as needed
+	  fill("black");
+	  strokeWeight(0)
       text(this.content, x+position+20, y+30);
-      fill('white');
+	  strokeWeight(1);
     }
 
     center(){

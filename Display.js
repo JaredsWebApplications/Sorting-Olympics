@@ -14,10 +14,12 @@ function setup() {
 	Algo = new selectAlgorithm();
 	Display = new displayInterface();
 	Display.setup();
+	Display.draw(passString[0], passString[1], passString[2], passString[3]);
 	//The original string is our inputString
 	inputString = ORIGINAL_STRING;
 	expectedString = ORIGINAL_STRING.split('').sort().join('');
-	frameRate(2);
+
+	frameRate(1);
 }
 
 var done = false;
