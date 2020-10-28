@@ -19,7 +19,7 @@ function setup() {
 	inputString = ORIGINAL_STRING;
 	expectedString = ORIGINAL_STRING.split('').sort().join('');
 
-	frameRate(2);
+	frameRate(1);
 }
 
 var done = false;
@@ -44,7 +44,7 @@ function draw() {
 	else
 	{
 		//Update our new input string by shifting
-		inputString = inputString.substring(1, inputString.length) + inputString.substring(0,1);
+		inputString = inputString.substring(inputString.length - 1 ,inputString.length) + inputString.substring(0, inputString.length - 1);
 		
 		//Reset our algorithms
 		Algo = new selectAlgorithm();
