@@ -18,11 +18,7 @@ function setup() {
 	//The original string is our inputString
 	inputString = ORIGINAL_STRING;
 	expectedString = ORIGINAL_STRING.split('').sort().join('');
-<<<<<<< HEAD
 	frameRate(5);
-=======
-	frameRate(1);
->>>>>>> b6363e2c5afa40f709271228d9560c952f3ae250
 }
 
 var done = false;
