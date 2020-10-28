@@ -8,6 +8,7 @@ var passString = new Array(  	ORIGINAL_STRING,									//An array of strings, ea
 var inputString = "";
 var expectedString = "";									//The original string and the expected string
 const NUM_ALGOS = passString.length;										//Number of algorithms we're sorting with
+var numPasses = 0;
 
 //Function called before draw
 function setup() {
@@ -17,7 +18,7 @@ function setup() {
 	//The original string is our inputString
 	inputString = ORIGINAL_STRING;
 	expectedString = ORIGINAL_STRING.split('').sort().join('');
-	frameRate(10);
+	frameRate(5);
 }
 
 var done = false;
@@ -34,7 +35,7 @@ function draw() {
 			//If the current algorithm isn't done sorting
 			if(passString[i] != expectedString)
 			{
-				passString[i] = Algo.Pass(passString[i], i);		//Perform a pass on the algorithm
+				passString[i] = Algo.Pass(passString[i], i, numPasses++);		//Perform a pass on the algorithm
 				done = false;										//An algorithm updated, we're not done yet
 			}
 		}

@@ -16,7 +16,7 @@ class selectAlgorithm {
 		this.MergeSort		= 0;
 		this.QuickSort		= 0;
 	}
-	Pass(stringSorting, sortType) {
+	Pass(stringSorting, sortType, numPasses) {
 		let container = stringSorting.split(''); // can't mutate strings, create list
 
 		//Call the sorting algorithm we want in the following switch statement
@@ -41,6 +41,9 @@ class selectAlgorithm {
 			case SORT.MERGE:
 				break;
 			case SORT.QUICK:
+                //if(numPasses == 0){
+                    //container = quicksort(container, 0, container.length - 1, 1);
+                //}
 				break;
 		}
 		//return stringSorting;
