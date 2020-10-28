@@ -245,11 +245,11 @@ class displayInterface {
 				 new Row(50, poreString, Math.floor(P.hmiddle/2)+600, Math.floor(P.vmiddle/2))]
 		);
 		QUADS.set("Merge", 
-				[new point(5, 555),
+				[new point(5, 480),
 				new Row(50, mergeString, Math.floor(P.hmiddle/2)-375, Math.floor(P.vmiddle/2)+450)]
 		);
 		QUADS.set("Quick", 
-				[new point(965, 555),
+				[new point(965, 480),
 				new Row(50, quickString, Math.floor(P.hmiddle/2)+600, Math.floor(P.vmiddle/2)+450)]
 		);
 
