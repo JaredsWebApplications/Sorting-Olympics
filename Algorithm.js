@@ -14,9 +14,9 @@ class selectAlgorithm {
 		this.InsertionIndex = 1;
 		this.PoreSort		= false;
 		this.MergeSort		= 2;
-		this.QuickSort		= 0;
+		this.QuickSort		= 1;
 	}
-	Pass(stringSorting, sortType, numPasses) {
+	Pass(stringSorting, sortType) {
 		let container = stringSorting.split(''); // can't mutate strings, create list
 
 		//Call the sorting algorithm we want in the following switch statement
@@ -86,16 +86,17 @@ class selectAlgorithm {
 				}
 				this.MergeSort *= 2;
 				container = oString;
+				break;
 			case SORT.QUICK:
-                //if(numPasses == 0){
-                    //container = quicksort(container, 0, container.length - 1, 1);
-                //}
+				//quickie(container, container.length, 1);
+				quickie(container, container.length, this.QuickSort);
+				this.QuickSort += 1;
 				break;
 		}
 		//return stringSorting;
 		return container.join('');
 	}
-	
+		
 	Sort(oldString) {
 		//Fully sorts a string using the first algorithm we have, just so we know what we're expecting as a result when we actually care to display
 		passString = this.Pass(oldString, 0);
