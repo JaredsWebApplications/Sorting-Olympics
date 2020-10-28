@@ -13,7 +13,7 @@ class selectAlgorithm {
 	constructor() {
 		this.InsertionIndex = 1;
 		this.PoreSort		= false;
-		this.MergeSort		= 0;
+		this.MergeSort		= 2;
 		this.QuickSort		= 0;
 	}
 	Pass(stringSorting, sortType) {
@@ -59,10 +59,34 @@ class selectAlgorithm {
 				this.PoreSort = !this.PoreSort;
 				break;
 			case SORT.MERGE:
-				return stringSorting.split('').sort().join('');
-				break;
+				let mergeIndex = 0;				//Index of the string we're traversing
+				let iString = [];				//String we're building during our pass
+				var oString = [];				//String we're outputting for the pass
+				
+				//While we're still on our pass
+				while(mergeIndex < container.length)
+				{
+					//If we're still within this merge box, push the item we're on into the input array
+					for(let i = mergeIndex; i < mergeIndex + this.MergeSort; i++)
+						if(i < container.length)
+							iString.push(container[i]);
+				
+					//Sort the merge box we're in
+					iString.sort();
+					
+					//Add the elements to the output array
+					for(let j = 0; j < iString.length; j++)
+						oString.push(iString[j]);
+					
+					//Reset our input
+					iString = [];
+					
+					//Move to the next slot
+					mergeIndex += this.MergeSort;
+				}
+				this.MergeSort *= 2;
+				container = oString;
 			case SORT.QUICK:
-				return stringSorting.split('').sort().join('');
 				break;
 		}
 		//return stringSorting;
