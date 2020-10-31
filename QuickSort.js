@@ -19,7 +19,8 @@ class Pair {
 };
 
 function partition(container, start, end){
-  // Central elements; all things to left is less than and all things right is greater than or equal to it
+  // Central elements; all things to left is less than and all things right
+  // is greater than or equal to it
   let pivot = container[end];
 
   let pIndex = start;
@@ -31,14 +32,14 @@ function partition(container, start, end){
       ++pIndex;
     }
   }
-  // The last element of the sub array range swaps with the 
+  // The last element of the sub array range swaps with the
   [container[pIndex], container[end]] = [container[end], container[pIndex]];
   return pIndex;
 }
 
 function quickie(container, amount){
   let stack = [];
-  
+
   let start = 0;
   let end = container.length - 1;
 
