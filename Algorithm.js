@@ -89,7 +89,8 @@ class selectAlgorithm {
 				break;
 			case SORT.QUICK:
 				//quickie(container, container.length, 1);
-				quickie(container, container.length, this.QuickSort);
+                //quickie(container);
+                quickie(container, this.QuickSort);
 				this.QuickSort += 1;
 				break;
 		}
