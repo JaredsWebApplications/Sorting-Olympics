@@ -14,30 +14,28 @@ var inputs = [
 ]
 
 function select(container){
-/*
- * Source: https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array
-*/
+/* Source: https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array */
     return container[Math.floor(Math.random() * container.length)];
 }
 
 var ORIGINAL_STRING = select(inputs);
-//An array of strings, each one will be passed into a different algorithm
+// An array of strings, each one will be passed into a different algorithm
 var passString = new Array(  	ORIGINAL_STRING,
 								ORIGINAL_STRING,
 								ORIGINAL_STRING,
 								ORIGINAL_STRING);
 
 var inputString = "";
-var expectedString = "";		//The original string and the expected string
-const NUM_ALGOS = passString.length; //Number of algorithms we're sorting with
+var expectedString = "";		// The original string and the expected string
+const NUM_ALGOS = passString.length; // Number of algorithms we're sorting with
 
-//Function called before draw
+// Function called before draw
 function setup() {
 	Algo = new selectAlgorithm();
 	Display = new displayInterface();
 	Display.setup();
 	Display.draw(passString[0], passString[1], passString[2], passString[3]);
-	//The original string is our inputString
+	// The original string is our inputString
 	inputString = ORIGINAL_STRING;
 	expectedString = ORIGINAL_STRING.split('').sort().join('');
 
@@ -46,47 +44,47 @@ function setup() {
 
 var done = false;
 
-//Function called every frame
+// Function called every frame
 function draw() {
 	if(!done)
 	{
-		done = true;	//we're done unless an algorithm updates
+		done = true;	// we're done unless an algorithm updates
 
-		//Go through all algorithms
+		// Go through all algorithms
 		for(let i = 0; i < NUM_ALGOS; i++)
 		{
-			//If the current algorithm isn't done sorting
+			// If the current algorithm isn't done sorting
 			if(passString[i] != expectedString)
 			{
-        //Perform a pass on the algorithm
+        // Perform a pass on the algorithm
 				passString[i] = Algo.Pass(passString[i], i);
-				done = false;	//An algorithm updated, we're not done yet
+				done = false;	// An algorithm updated, we're not done yet
 			}
 		}
 	}
 	else
 	{
-		//Update our new input string by shifting
+		// Update our new input string by shifting
 		inputString = inputString.substring(inputString.length - 1 ,inputString.length) + inputString.substring(0, inputString.length - 1);
 
-		//Reset our algorithms
+		// Reset our algorithms
 		Algo = new selectAlgorithm();
 
-		//If we haven't looped yet
+		// If we haven't looped yet
 		if(inputString != ORIGINAL_STRING)
 		{
-			//For every string
+			// For every string
 			for(let i = 0; i < NUM_ALGOS; i++)
 			{
         //Set the current string to the new input string
 				passString[i] = inputString;
 			}
-			done = false;	//We are no longer done
+			done = false;	// We are no longer done
 		}
-		//else If we've looped, don't update done. We'll stop performing operations.
+		// else If we've looped, don't update done. We'll stop performing operations.
 		else
 		{
-			noLoop();	//Stops draw from being called again
+			noLoop();	// Stops draw from being called again
 		}
 	}
 	Display.draw(passString[0], passString[1], passString[2], passString[3]);

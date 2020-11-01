@@ -1,11 +1,9 @@
 class Cell {
-	/*
-     * Returns the dimensions of the cell
-    */
+	/* Returns the dimensions of the cell */
     dimensions(){
       return [this.bl.x, this.bl.y, this.length, this.width];
     }
-	
+
 	constructor(bl, content, length=10, width=10){
         /*
          * bl: bottom left coordinate
@@ -23,24 +21,24 @@ class Cell {
     drawToScreen(position, x, y, colorMe=true){
       /*
        * Draw the current square to the screen
-      */ 
-	  
+      */
+
 		let colorWanted = (this.content.charCodeAt(0) - "0".charCodeAt(0));
 		if(colorWanted > 9)
 			colorWanted -= 7;
-		
+
 		colorWanted *= 18;
 
 	  fill(colorWanted, 0xff, 0x77, 255);
       stroke('black');
       strokeWeight(1);
-      
+
       let [x1,y1,height,width] = this.dimensions();
       rect(x1, y1, height, width);
 
       textSize(22);
-	  
-	  
+
+
         // modify the color as needed
 	  fill("black");
 	  strokeWeight(0)
@@ -188,7 +186,7 @@ class Plane {
 
     partition(){
         let container = [];
-        
+
         container.push(new Quadrant(
                         [0, this.hmiddle],
                         [0, this.hmiddle]
@@ -236,7 +234,7 @@ class displayInterface {
 
 
 		let QUADS = new Map();
-		QUADS.set("Insertion", 
+		QUADS.set("Insertion",
 				[new point(5, 15),
 				 new Row(50, insertionString, Math.floor(P.hmiddle/2)-375, Math.floor(P.vmiddle/2))]
 		);
@@ -244,11 +242,11 @@ class displayInterface {
 				[new point(965, 15),
 				 new Row(50, poreString, Math.floor(P.hmiddle/2)+600, Math.floor(P.vmiddle/2))]
 		);
-		QUADS.set("Merge", 
+		QUADS.set("Merge",
 				[new point(5, 480),
 				new Row(50, mergeString, Math.floor(P.hmiddle/2)-375, Math.floor(P.vmiddle/2)+450)]
 		);
-		QUADS.set("Quick", 
+		QUADS.set("Quick",
 				[new point(965, 480),
 				new Row(50, quickString, Math.floor(P.hmiddle/2)+600, Math.floor(P.vmiddle/2)+450)]
 		);
@@ -267,5 +265,3 @@ class displayInterface {
 		P.display();
 	}
 }
-
-
