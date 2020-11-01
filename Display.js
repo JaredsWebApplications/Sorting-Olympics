@@ -38,18 +38,14 @@ function setup() {
 	// The original string is our inputString
 	inputString = ORIGINAL_STRING;
 	expectedString = ORIGINAL_STRING.split('').sort().join('');
-
 	frameRate(1);
 }
-
 var done = false;
-
 // Function called every frame
 function draw() {
 	if(!done)
 	{
 		done = true;	// we're done unless an algorithm updates
-
 		// Go through all algorithms
 		for(let i = 0; i < NUM_ALGOS; i++)
 		{

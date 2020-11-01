@@ -1,5 +1,35 @@
 /************************************************************************
-
+* * * * * * * * * * * * * *	ALGORITHM.JS * * * * * * * * * * * * * * * *
+*************************************************************************
+* CREATED BY : JARED DYRESON * jareddyreson@csu.fullerton.edu
+*            : BRIAN LUCERO  * 13rianlucero.csu.fullerton.edu
+*            : MASON GODFREY * mgodfrey@csu.fullerton.edu
+*************************************************************************
+* This file contains the sorting function implementations for the each of
+* the following sorting functions:
+*
+* 1. Insertion Sort
+*
+* 2. Gold's PoreSort
+*
+* 3. Merge Sort
+*
+* 4. Quick Sort
+*
+* CLASSES
+*
+* Cell - an entity that contains a character representing a string given as
+* input for the sorting algorithm. Can be mutated and updated at will
+*
+* FUNCTIONS
+*
+* dimensions - get an unpackable version of the attributes which can be used
+* throughout other functions
+* drawToScreen - write an individual to the screen and can also accept a color
+* value to change the fill of that given cell
+* center - get the center position of the cell
+*
+*
  *************************************************************************/
 
 const SORT = {

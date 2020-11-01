@@ -1,11 +1,7 @@
-/*
- * Sourced from https://www.techiedelight.com/iterative-implementation-of-quicksort/
-*/
+/* Sourced from https://www.techiedelight.com/iterative-implementation-of-quicksort/ */
 
 class Pair {
-  /*
-   * Tuple like class
-  */
+  /* Tuple like class */
   constructor(s, e){
     this.start = s;
     this.end = e;
@@ -22,9 +18,7 @@ function partition(container, start, end){
   // Central elements; all things to left is less than and all things right
   // is greater than or equal to it
   let pivot = container[end];
-
   let pIndex = start;
-
   for(let i = start; i < end; ++i){
     // Swap on the left side
     if(container[i] <= pivot){
@@ -39,14 +33,10 @@ function partition(container, start, end){
 
 function quickie(container, amount){
   let stack = [];
-
   let start = 0;
   let end = container.length - 1;
-
   stack.unshift(new Pair(start, end));
-
   // Make sure the stack is still containing elements
-
   while(stack.length > 0){
     // After one pass, just do a hard quit
     if(--amount < 0) { return; }

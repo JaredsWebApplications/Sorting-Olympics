@@ -1,6 +1,6 @@
 class Cell {
 	/* Returns the dimensions of the cell */
-    dimensions(){
+    dimensions() {
       return [this.bl.x, this.bl.y, this.length, this.width];
     }
 
@@ -46,7 +46,7 @@ class Cell {
 	  strokeWeight(1);
     }
 
-    center(){
+    center() {
         /*
          * Get the approximate center of a cell
         */
@@ -65,7 +65,7 @@ class point {
 	}
 
 	//location of the current cell
-	position(){
+	position() {
 		return [this.x, this.y];
 	}
 }
@@ -79,7 +79,7 @@ class Row {
         this.container = this.createContainer(x, y);
     }
 
-    createContainer(x, y){
+    createContainer(x, y) {
         /*
          * we convert the string into an array of Cells
          * here we can display each index correctly in a row like fashion
@@ -100,7 +100,7 @@ class Row {
         return array;
     }
 
-    display(){
+    display() {
         // write to the screen
         for(var i = 0; i < this.container.length; ++i){
             this.container[i].drawToScreen(i*this.size, this.x, this.y);
