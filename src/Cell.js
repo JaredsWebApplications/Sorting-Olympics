@@ -6,13 +6,15 @@
  *
  * CLASSES
  *
- * Cell - an entity that contains a character representing a string given as input
- * for the sorting algorithm. Can be mutated and updated at will
+ * Cell - an entity that contains a character representing a string given as
+ * input for the sorting algorithm. Can be mutated and updated at will
  *
  * FUNCTIONS
  *
- * dimensions - get an unpackable version of the attributes which can be used throughout other functions
- * drawToScreen - write an individual to the screen and can also accept a color value to change the fill of that given cell
+ * dimensions - get an unpackable version of the attributes which can be used
+ * throughout other functions
+ * drawToScreen - write an individual to the screen and can also accept a color
+ * value to change the fill of that given cell
  * center - get the center position of the cell
  *
  *
@@ -25,7 +27,7 @@
     dimensions(){
       return [this.bl.x, this.bl.y, this.length, this.width];
     }
-	
+
 	constructor(bl, content, length=10, width=10){
         /*
          * bl: bottom left coordinate
@@ -43,7 +45,7 @@
     drawToScreen(position, x, y, colorMe=false){
       /*
        * Draw the current square to the screen
-      */ 
+      */
 
       if(colorMe){
         // modify the color as needed
@@ -51,7 +53,7 @@
       }
       stroke('black');
       strokeWeight(2);
-      
+
       let [x1,y1,height,width] = this.dimensions();
       rect(x1, y1, height, width);
 

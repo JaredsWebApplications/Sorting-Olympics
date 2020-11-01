@@ -25,7 +25,7 @@ function partition(container, start, end){
 
 function quickie(container, length, amount){
   let stack = [];
-  
+
   let start = 0;
   let end = length - 1;
 
