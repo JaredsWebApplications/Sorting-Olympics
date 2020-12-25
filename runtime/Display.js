@@ -1,3 +1,22 @@
+/************************************************************************
+* * * * * * * * * * * * * *	DISPLAY.JS * * * * * * * * * * * * * * * *
+*************************************************************************
+* CREATED BY : JARED DYRESON * jareddyreson@csu.fullerton.edu
+*            : BRIAN LUCERO  * 13rianlucero.csu.fullerton.edu
+*            : MASON GODFREY * mgodfrey@csu.fullerton.edu
+*************************************************************************
+* This file contains implementations of the select(), setup(), and draw()
+* functions.
+*
+* select() - function that gets a random value from a string array in JS
+*
+* setup() - acts as the main function to set up the environment inside
+*           of the web browser
+*
+* draw() - function to draw the values of the array and sorting
+*          visuals
+*************************************************************************/
+
 var inputs = [
     "05CA627BC2B6F03",
     "065DE6671F040BA",

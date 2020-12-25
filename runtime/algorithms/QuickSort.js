@@ -1,3 +1,13 @@
+/*****************************************************************************
+* * * * * * * * * * * * * *	QUICKSORT.JS * * * * * * * * * * * * * * * * * * *
+******************************************************************************
+* CREATED BY : JARED DYRESON * jareddyreson@csu.fullerton.edu
+             : BRIAN LUCERO  * 13rianlucero.csu.fullerton.edu
+*************************************************************************
+*
+* This file contains the implementation of Quicksort
+*
+**************************************************************************/
 /* Sourced from https://www.techiedelight.com/iterative-implementation-of-quicksort/ */
 
 class Pair {

@@ -8,6 +8,8 @@
 * This file contains the sorting function implementations for the each of
 * the following sorting functions:
 *
+* Also includes the helper functions for sorting ( Sort() )
+*
 * 1. Insertion Sort
 *
 * 2. Gold's PoreSort
@@ -15,22 +17,9 @@
 * 3. Merge Sort
 *
 * 4. Quick Sort
-*
-* CLASSES
-*
-* Cell - an entity that contains a character representing a string given as
-* input for the sorting algorithm. Can be mutated and updated at will
-*
-* FUNCTIONS
-*
-* dimensions - get an unpackable version of the attributes which can be used
-* throughout other functions
-* drawToScreen - write an individual to the screen and can also accept a color
-* value to change the fill of that given cell
-* center - get the center position of the cell
-*
-*
- *************************************************************************/
+*    ==> Implementation contained in separate file
+*    ==> runtime/algorithms/QuickSort.js
+*************************************************************************/
 
 const SORT = {
 	INSERTION 	: 0,
@@ -121,8 +110,10 @@ class selectAlgorithm {
 				container = oString;
 				break;
 			case SORT.QUICK:
-				//quickie(container, container.length, 1);
-        //quickie(container);
+				// quickie(container, container.length, 1);
+        // quickie(container);
+				// Implementation contained in separate file
+				// runtime/algorithms/QuickSort.js
         quickie(container, this.QuickSort);
 				this.QuickSort += 1;
 				break;
